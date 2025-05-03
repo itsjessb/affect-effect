@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affect vs Effect Checker - Check Your Grammar</title>
+    <meta name="description" content="Free online tool to check if you're using affect or effect correctly. Get instant feedback and corrections for your sentences.">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+    
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Container */
+        .checker-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Ad Container Styles */
+        .ad-container {
+            margin: 2rem 0;
+            text-align: center;
+            min-height: 100px;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .ad-label {
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Header */
+        .checker-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .checker-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .checker-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Main Checker */
+        .checker-box {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .sentence-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e1e5ee;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .sentence-input:focus {
+            border-color: #5c6bc0;
+            outline: none;
+        }
+
+        .check-button {
+            background: #5c6bc0;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .check-button:hover {
+            background: #3f51b5;
+        }
+
+        .result-box {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .result-correct {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .result-incorrect {
+            background-color: #ffebee;
+            border: 1px solid #ffcdd2;
+            color: #c62828;
+        }
+
+        .correction {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Quick Guide */
+        .guide-box {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .guide-box h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .guide-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e1e5ee;
+        }
+
+        .guide-item h3 {
+            color: #5c6bc0;
+            margin-bottom: 0.5rem;
+        }
+
+        /* History */
+        .history-box {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+        }
+
+        .history-box h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .history-item {
+            border-bottom: 1px solid #e1e5ee;
+            padding: 1rem 0;
+        }
+
+        .history-item:last-child {
+            border-bottom: none;
+        }
+
+        .history-item .original {
+            font-weight: 500;
+        }
+
+        .history-item .status {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+        }
+
+        .status-correct {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-incorrect {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .checker-header h1 {
+                font-size: 2rem;
+            }
+            
+            .checker-box, .guide-box, .history-box {
+                padding: 1.5rem;
+            }
+            
+            .check-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="checker-container">
+        <header class="checker-header">
+            <h1>Affect vs Effect Checker</h1>
+            <p>Check if you're using "affect" or "effect" correctly in your sentences</p>
+        </header>
+
+        <!-- Top Ad -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Responsive Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="checker-box">
+            <div class="input-group">
+                <label for="sentence-input">Enter your sentence:</label>
+                <input type="text" id="sentence-input" class="sentence-input" 
+                       placeholder="Type a sentence containing 'affect' or 'effect'...">
+            </div>
+            <button id="check-button" class="check-button">Check Sentence</button>
+            <div id="result-box" class="result-box"></div>
+        </div>
+
+        <!-- Middle Ad -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- In-article Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block; text-align:center;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="guide-box">
+            <h2>Quick Guide: Affect vs Effect</h2>
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <h3>Affect (Verb)</h3>
+                    <p>Usually means "to influence" or "to make a difference to"</p>
+                    <p><em>Example: The rain will affect our plans.</em></p>
+                </div>
+                <div class="guide-item">
+                    <h3>Effect (Noun)</h3>
+                    <p>Usually means "result" or "consequence"</p>
+                    <p><em>Example: The effect of the rain was a canceled picnic.</em></p>
+                </div>
+                <div class="guide-item">
+                    <h3>Effect (Verb)</h3>
+                    <p>Means "to bring about" or "to cause" (less common)</p>
+                    <p><em>Example: The new policy will effect change.</em></p>
+                </div>
+                <div class="guide-item">
+                    <h3>Affect (Noun)</h3>
+                    <p>Psychology term for emotional expression (rare)</p>
+                    <p><em>Example: The patient showed a flat affect.</em></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-box">
+            <h2>History</h2>
+            <div id="history-container">
+                <p>Your checked sentences will appear here.</p>
+            </div>
+        </div>
+
+        <!-- Bottom Ad -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Display Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <script>
+        // Word forms for matching
+        const affectForms = ['affect', 'affects', 'affected', 'affecting'];
+        const effectForms = ['effect', 'effects', 'effected', 'effecting'];
+        
+        // Common patterns for correct usage
+        const patterns = {
+            affectVerb: {
+                patterns: [
+                    /will affect/i,
+                    /would affect/i,
+                    /could affect/i,
+                    /might affect/i,
+                    /can affect/i,
+                    /may affect/i,
+                    /should affect/i,
+                    /to affect/i,
+                    /affecting/i,
+                    /affected by/i,
+                    /affects? (?:the|a|an|your|my|our|their|his|her|its)/i,
+                    /adversely affect/i,
+                    /positively affect/i,
+                    /negatively affect/i,
+                    /directly affect/i,
+                    /indirectly affect/i
+                ],
+                type: 'verb'
+            },
+            effectNoun: {
+                patterns: [
+                    /the effect/i,
+                    /an effect/i,
+                    /effects of/i,
+                    /cause and effect/i,
+                    /side effect/i,
+                    /have an? effect/i,
+                    /has an? effect/i,
+                    /had an? effect/i,
+                    /positive effect/i,
+                    /negative effect/i,
+                    /desired effect/i,
+                    /(?:take|taking|took|taken) effect/i,
+                    /in effect/i,
+                    /greenhouse effect/i,
+                    /special effects/i,
+                    /sound effects/i,
+                    /visual effects/i
+                ],
+                type: 'noun'
+            },
+            effectVerb: {
+                patterns: [
+                    /effect(?:s|ed|ing)? (?:a |an )?change/i,
+                    /effect(?:s|ed|ing)? (?:a |an )?transformation/i,
+                    /effect(?:s|ed|ing)? (?:a |an )?solution/i,
+                    /effect(?:s|ed|ing)? (?:a |an )?repair/i,
+                    /effect(?:s|ed|ing)? (?:a |an )?cure/i,
+                    /effect(?:s|ed|ing)? (?:a |an )?rescue/i
+                ],
+                type: 'verb'
+            },
+            affectNoun: {
+                patterns: [
+                    /flat affect/i,
+                    /emotional affect/i,
+                    /display of affect/i,
+                    /patient's affect/i,
+                    /inappropriate affect/i
+                ],
+                type: 'noun'
+            }
+        };
+
+        function checkSentence(sentence) {
+            // Find which word is used in the sentence
+            let hasAffect = false;
+            let hasEffect = false;
+            let matchedWord = '';
+            
+            for (const form of affectForms) {
+                const regex = new RegExp(`\\b${form}\\b`, 'i');
+                if (regex.test(sentence)) {
+                    hasAffect = true;
+                    matchedWord = sentence.match(regex)[0];
+                    break;
+                }
+            }
+            
+            for (const form of effectForms) {
+                const regex = new RegExp(`\\b${form}\\b`, 'i');
+                if (regex.test(sentence)) {
+                    hasEffect = true;
+                    matchedWord = sentence.match(regex)[0];
+                    break;
+                }
+            }
+            
+            if (!hasAffect && !hasEffect) {
+                return {
+                    isCorrect: false,
+                    message: 'Please enter a sentence containing "affect" or "effect".'
+                };
+            }
+            
+            // Check if the usage matches known patterns
+            let matchedPattern = null;
+            let expectedType = null;
+            
+            for (const [key, value] of Object.entries(patterns)) {
+                for (const pattern of value.patterns) {
+                    if (pattern.test(sentence)) {
+                        matchedPattern = key;
+                        expectedType = value.type;
+                        break;
+                    }
+                }
+                if (matchedPattern) break;
+            }
+            
+            // If we found a matching pattern, check if it's correct
+            if (matchedPattern) {
+                if ((hasAffect && matchedPattern.startsWith('affect')) || 
+                    (hasEffect && matchedPattern.startsWith('effect'))) {
+                    return {
+                        isCorrect: true,
+                        message: 'Correct!'
+                    };
+                } else {
+                    // Wrong word for the pattern
+                    let correction = sentence;
+                    if (hasAffect) {
+                        // Should use effect instead
+                        correction = sentence.replace(
+                            new RegExp(`\\b${matchedWord}\\b`, 'i'),
+                            matchedWord.replace(/affect/i, 'effect')
+                        );
+                    } else {
+                        // Should use affect instead
+                        correction = sentence.replace(
+                            new RegExp(`\\b${matchedWord}\\b`, 'i'),
+                            matchedWord.replace(/effect/i, 'affect')
+                        );
+                    }
+                    return {
+                        isCorrect: false,
+                        message: 'Incorrect',
+                        correction: correction
+                    };
+                }
+            }
+            
+            // If no pattern matched, use general rules
+            // This is a simplified check - in reality, more context would be needed
+            const sentenceLower = sentence.toLowerCase();
+            
+            // Check for common verb indicators
+            if (hasAffect) {
+                if (/\b(will|would|could|might|can|may|should|to|is|are|was|were)\s+affect/i.test(sentence)) {
+                    return {
+                        isCorrect: true,
+                        message: 'Correct!'
+                    };
+                }
+            }
+            
+            // Check for common noun indicators
+            if (hasEffect) {
+                if (/\b(the|an?|this|that|these|those|his|her|its|their|our|your|my)\s+effects?\b/i.test(sentence)) {
+                    return {
+                        isCorrect: true,
+                        message: 'Correct!'
+                    };
+                }
+            }
+            
+            // Default to suggesting the opposite if unsure
+            let correction = sentence;
+            if (hasAffect) {
+                correction = sentence.replace(
+                    new RegExp(`\\b${matchedWord}\\b`, 'i'),
+                    matchedWord.replace(/affect/i, 'effect')
+                );
+            } else {
+                correction = sentence.replace(
+                    new RegExp(`\\b${matchedWord}\\b`, 'i'),
+                    matchedWord.replace(/effect/i, 'affect')
+                );
+            }
+            
+            return {
+                isCorrect: false,
+                message: 'Incorrect',
+                correction: correction
+            };
+        }
+
+        // History management
+        let history = [];
+        
+        function addToHistory(sentence, result) {
+            history.unshift({
+                sentence: sentence,
+                isCorrect: result.isCorrect,
+                correction: result.correction
+            });
+            
+            // Keep only last 10 items
+            if (history.length > 10) {
+                history.pop();
+            }
+            
+            updateHistoryDisplay();
+        }
+        
+        function updateHistoryDisplay() {
+            const container = document.getElementById('history-container');
+            
+            if (history.length === 0) {
+                container.innerHTML = '<p>Your checked sentences will appear here.</p>';
+                return;
+            }
+            
+            container.innerHTML = history.map(item => `
+                <div class="history-item">
+                    <span class="status ${item.isCorrect ? 'status-correct' : 'status-incorrect'}">
+                        ${item.isCorrect ? 'Correct' : 'Incorrect'}
+                    </span>
+                    <div class="original">${item.sentence}</div>
+                    ${item.correction ? `<div class="correction">Correction: ${item.correction}</div>` : ''}
+                </div>
+            `).join('');
+        }
+
+        // Event listeners
+        document.getElementById('check-button').addEventListener('click', function() {
+            const input = document.getElementById('sentence-input');
+            const resultBox = document.getElementById('result-box');
+            const sentence = input.value.trim();
+            
+            if (!sentence) {
+                resultBox.className = 'result-box result-incorrect';
+                resultBox.innerHTML = 'Please enter a sentence.';
+                resultBox.style.display = 'block';
+                return;
+            }
+            
+            const result = checkSentence(sentence);
+            
+            if (result.isCorrect) {
+                resultBox.className = 'result-box result-correct';
+                resultBox.innerHTML = result.message;
+            } else {
+                resultBox.className = 'result-box result-incorrect';
+                resultBox.innerHTML = result.message;
+                if (result.correction) {
+                    resultBox.innerHTML += `<div class="correction">Correct sentence: ${result.correction}</div>`;
+                }
+            }
+            
+            resultBox.style.display = 'block';
+            
+            // Add to history only if it's a real check
+            if (result.message !== 'Please enter a sentence containing "affect" or "effect".') {
+                addToHistory(sentence, result);
+            }
+        });
+        
+        // Allow Enter key to submit
+        document.getElementById('sentence-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('check-button').click();
+            }
+        });
+    </script>
+</body>
+</html>
