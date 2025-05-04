@@ -55,15 +55,21 @@
         }
 
         /* Ad Container Styles */
-        .ad-container {
-            margin: 2rem 0;
-            text-align: center;
-            min-height: 100px;
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-        }
-
+       .ad-container {
+    margin: 10px 0;  /* Changed from 2rem to 10px */
+    text-align: center;
+    min-height: 50px;  /* Changed from 100px to 50px */
+    max-height: 280px;  /* Added max-height */
+    background: #f8f9fa;
+    padding: 10px;  /* Changed from 1rem to 10px */
+    border-radius: 8px;
+    overflow: hidden;  /* Added to prevent content overflow */
+}
+      /* Hide empty ad containers */
+.ad-container:empty,
+.ad-container:not(:has(.adsbygoogle[data-ad-status="unfilled"])) {
+    display: none;
+}
         .ad-label {
             font-size: 0.75rem;
             color: #666;
