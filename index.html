@@ -12,26 +12,26 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Affect vs Effect Checker - Check Your Grammar</title>
-    <meta name="description" content="Free online tool to check if you're using affect or effect correctly. Get instant feedback and corrections for your sentences.">
+    <title>Which Word Is It? - Grammar Checker for Commonly Confused Words</title>
+    <meta name="description" content="Free online tool to check if you're using commonly confused words correctly. Check affect/effect, to/too, its/it's, they're/their/there, your/you're, and who's/whose.">
     <link rel="icon" href="/favicon.png" type="image/png">
     <!-- Google AdSense -->
    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4330643846117605"
      crossorigin="anonymous"></script>
        <!-- OPEN GRAPH META TAGS  -->
-    <meta name="keywords" content="affect vs effect, grammar checker, affect effect difference, English grammar, affect or effect, grammar tool">
-    <meta name="author" content="Your Name">
+    <meta name="keywords" content="grammar checker, affect vs effect, to vs too, its vs it's, they're their there, your you're, who's whose, English grammar, commonly confused words">
+    <meta name="author" content="Which Word Is It">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Affect vs Effect Checker - Free Grammar Tool">
-    <meta property="og:description" content="Free online tool to check if you're using affect or effect correctly. Get instant feedback and corrections for your sentences.">
-    <meta property="og:url" content="https://isitaffectoreffect.com">
+    <meta property="og:title" content="Which Word Is It? - Grammar Checker for Commonly Confused Words">
+    <meta property="og:description" content="Free online tool to check if you're using commonly confused words correctly. Get instant feedback and corrections for your sentences.">
+    <meta property="og:url" content="https://whichwordisit.com">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://isitaffectoreffect.com/og-image.png">
+    <meta property="og:image" content="https://whichwordisit.com/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Affect vs Effect Checker - Free Grammar Tool">
-    <meta name="twitter:description" content="Free online tool to check if you're using affect or effect correctly. Get instant feedback and corrections.">
-    <meta name="twitter:image" content="https://isitaffectoreffect.com/twitter-image.png">
-    <link rel="canonical" href="https://isitaffectoreffect.com/">
+    <meta name="twitter:title" content="Which Word Is It? - Grammar Checker">
+    <meta name="twitter:description" content="Free online tool to check if you're using commonly confused words correctly. Get instant feedback and corrections.">
+    <meta name="twitter:image" content="https://whichwordisit.com/twitter-image.png">
+    <link rel="canonical" href="https://whichwordisit.com/">
     <style>
         /* Global Styles */
         * {
@@ -45,6 +45,54 @@
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
+            padding-top: 60px; /* Account for sticky nav */
+        }
+
+        /* Navigation */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: #5c6bc0;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #f0f2ff;
         }
 
         /* Container */
@@ -56,20 +104,22 @@
 
         /* Ad Container Styles */
        .ad-container {
-    margin: 10px 0;  /* Changed from 2rem to 10px */
-    text-align: center;
-    min-height: 50px;  /* Changed from 100px to 50px */
-    max-height: 280px;  /* Added max-height */
-    background: #f8f9fa;
-    padding: 10px;  /* Changed from 1rem to 10px */
-    border-radius: 8px;
-    overflow: hidden;  /* Added to prevent content overflow */
-}
-      /* Hide empty ad containers */
-.ad-container:empty,
-.ad-container:not(:has(.adsbygoogle[data-ad-status="unfilled"])) {
-    display: none;
-}
+            margin: 10px 0;
+            text-align: center;
+            min-height: 50px;
+            max-height: 280px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        /* Hide empty ad containers */
+        .ad-container:empty,
+        .ad-container:not(:has(.adsbygoogle[data-ad-status="unfilled"])) {
+            display: none;
+        }
+        
         .ad-label {
             font-size: 0.75rem;
             color: #666;
@@ -100,6 +150,12 @@
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             padding: 2rem;
             margin-bottom: 2rem;
+        }
+
+        .checker-box h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
         }
 
         .input-group {
@@ -181,6 +237,52 @@
             margin-bottom: 1rem;
         }
 
+        /* Accordion Styles */
+        .accordion {
+            border: 1px solid #e1e5ee;
+            border-radius: 8px;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #e1e5ee;
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            background: #f8f9fa;
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .accordion-header:hover {
+            background: #f0f2ff;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 1rem;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .accordion-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-arrow.active {
+            transform: rotate(180deg);
+        }
+
         .guide-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -233,6 +335,16 @@
             margin-right: 0.5rem;
         }
 
+        .history-item .type {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #e3f2fd;
+            color: #1976d2;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+        }
+
         .status-correct {
             background-color: #e8f5e9;
             color: #2e7d32;
@@ -244,7 +356,23 @@
         }
 
         /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
         @media (max-width: 600px) {
+            body {
+                padding-top: 100px; /* More space for wrapped nav */
+            }
+
             .checker-header h1 {
                 font-size: 2rem;
             }
@@ -256,25 +384,20 @@
             .check-button {
                 width: 100%;
             }
+
+            .nav-link {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
-    <meta name="keywords" content="affect vs effect, grammar checker, affect effect difference, English grammar, affect or effect, grammar tool">
-<meta name="author" content="Your Name">
-<meta property="og:title" content="Affect vs Effect Checker - Check Your Grammar">
-<meta property="og:description" content="Free online tool to check if you're using affect or effect correctly. Get instant feedback and corrections.">
-<meta property="og:url" content="https://isitaffectoreffect.com">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://isitaffectoreffect.com/">
-    <!-- Add this schema markup -->
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Affect vs Effect Checker",
-  "url": "https://isitaffectoreffect.com",
-  "description": "Free online grammar tool to check if you're using affect or effect correctly in your sentences",
+  "name": "Which Word Is It?",
+  "url": "https://whichwordisit.com",
+  "description": "Free online grammar tool to check if you're using commonly confused words correctly, including affect/effect, to/too, its/it's, they're/their/there, your/you're, and who's/whose",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All",
   "offers": {
@@ -284,33 +407,47 @@
   },
   "featureList": [
     "Instant grammar checking",
-    "Affect vs effect detection", 
+    "Multiple word pair detection",
     "Sentence correction suggestions",
     "Usage history tracking",
-    "Grammar guide and examples"
+    "Comprehensive grammar guide",
+    "Affect vs effect checker",
+    "To vs too checker",
+    "Its vs it's checker",
+    "They're their there checker",
+    "Your you're checker",
+    "Who's whose checker"
   ],
   "creator": {
     "@type": "Organization",
-    "name": "IsItAffectOrEffect.com"
+    "name": "WhichWordIsIt.com"
   }
 }
 </script>
 </head>
 <body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Which Word Is It?</a>
+            <div class="nav-links">
+                <a href="#affect-effect" class="nav-link">Affect/Effect</a>
+                <a href="#to-too" class="nav-link">To/Too/Two</a>
+                <a href="#its-its" class="nav-link">Its/It's</a>
+                <a href="#theyre-their-there" class="nav-link">They're/Their/There</a>
+                <a href="#your-youre" class="nav-link">Your/You're</a>
+                <a href="#whos-whose" class="nav-link">Who's/Whose</a>
+                <a href="#guide" class="nav-link">Guide</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="checker-container">
         <header class="checker-header">
-            <h1>Affect vs Effect Checker</h1>
-            <p>Check if you're using "affect" or "effect" correctly in your sentences</p>
+            <h1>Which Word Is It?</h1>
+            <p>Check if you're using commonly confused words correctly in your sentences</p>
+            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Note: Our checkers only verify whether the specific words (affect/effect, to/too/two, etc.) are used correctly, not the grammar of the entire sentence.</p>
         </header>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3KMZ71N1EP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-3KMZ71N1EP');
-</script>
         <!-- Top Ad -->
         <div class="ad-container">
             <div class="ad-label">Advertisement</div>
@@ -326,14 +463,76 @@
             </script>
         </div>
 
-        <div class="checker-box">
+        <!-- Affect/Effect Checker -->
+        <div id="affect-effect" class="checker-box">
+            <h2>Affect vs Effect Checker</h2>
             <div class="input-group">
-                <label for="sentence-input">Enter your sentence:</label>
-                <input type="text" id="sentence-input" class="sentence-input" 
+                <label for="affect-effect-input">Enter your sentence:</label>
+                <input type="text" id="affect-effect-input" class="sentence-input" 
                        placeholder="Type a sentence containing 'affect' or 'effect'...">
             </div>
-            <button id="check-button" class="check-button">Check Sentence</button>
-            <div id="result-box" class="result-box"></div>
+            <button class="check-button" data-type="affect-effect">Check Sentence</button>
+            <div class="result-box"></div>
+        </div>
+
+        <!-- To/Too/Two Checker -->
+        <div id="to-too" class="checker-box">
+            <h2>To vs Too vs Two Checker</h2>
+            <div class="input-group">
+                <label for="to-too-input">Enter your sentence:</label>
+                <input type="text" id="to-too-input" class="sentence-input" 
+                       placeholder="Type a sentence containing 'to', 'too', or 'two'...">
+            </div>
+            <button class="check-button" data-type="to-too">Check Sentence</button>
+            <div class="result-box"></div>
+        </div>
+
+        <!-- Its/It's Checker -->
+        <div id="its-its" class="checker-box">
+            <h2>Its vs It's Checker</h2>
+            <div class="input-group">
+                <label for="its-its-input">Enter your sentence:</label>
+                <input type="text" id="its-its-input" class="sentence-input" 
+                       placeholder="Type a sentence containing 'its' or 'it's'...">
+            </div>
+            <button class="check-button" data-type="its-its">Check Sentence</button>
+            <div class="result-box"></div>
+        </div>
+
+        <!-- They're/Their/There Checker -->
+        <div id="theyre-their-there" class="checker-box">
+            <h2>They're vs Their vs There Checker</h2>
+            <div class="input-group">
+                <label for="theyre-their-there-input">Enter your sentence:</label>
+                <input type="text" id="theyre-their-there-input" class="sentence-input" 
+                       placeholder="Type a sentence containing 'they're', 'their', or 'there'...">
+            </div>
+            <button class="check-button" data-type="theyre-their-there">Check Sentence</button>
+            <div class="result-box"></div>
+        </div>
+
+        <!-- Your/You're Checker -->
+        <div id="your-youre" class="checker-box">
+            <h2>Your vs You're Checker</h2>
+            <div class="input-group">
+                <label for="your-youre-input">Enter your sentence:</label>
+                <input type="text" id="your-youre-input" class="sentence-input" 
+                       placeholder="Type a sentence containing 'your' or 'you're'...">
+            </div>
+            <button class="check-button" data-type="your-youre">Check Sentence</button>
+            <div class="result-box"></div>
+        </div>
+
+        <!-- Who's/Whose Checker -->
+        <div id="whos-whose" class="checker-box">
+            <h2>Who's vs Whose Checker</h2>
+            <div class="input-group">
+                <label for="whos-whose-input">Enter your sentence:</label>
+                <input type="text" id="whos-whose-input" class="sentence-input" 
+                       placeholder="Type a sentence containing 'who's' or 'whose'...">
+            </div>
+            <button class="check-button" data-type="whos-whose">Check Sentence</button>
+            <div class="result-box"></div>
         </div>
 
         <!-- Middle Ad -->
@@ -351,28 +550,160 @@
             </script>
         </div>
 
-        <div class="guide-box">
-            <h2>Quick Guide: Affect vs Effect</h2>
-            <div class="guide-grid">
-                <div class="guide-item">
-                    <h3>Affect (Verb)</h3>
-                    <p>Usually means "to influence" or "to make a difference to"</p>
-                    <p><em>Example: The rain will affect our plans.</em></p>
+        <!-- Combined Guide Section -->
+        <div id="guide" class="guide-box">
+            <h2>Quick Guide: Commonly Confused Words</h2>
+            <div class="accordion">
+                <!-- Affect/Effect Accordion -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Affect vs Effect</span>
+                        <span class="accordion-arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="guide-grid">
+                            <div class="guide-item">
+                                <h3>Affect (Verb)</h3>
+                                <p>Usually means "to influence" or "to make a difference to"</p>
+                                <p><em>Example: The rain will affect our plans.</em></p>
+                            </div>
+                            <div class="guide-item">
+                                <h3>Effect (Noun)</h3>
+                                <p>Usually means "result" or "consequence"</p>
+                                <p><em>Example: The effect of the rain was a canceled picnic.</em></p>
+                            </div>
+                            <div class="guide-item">
+                                <h3>Effect (Verb)</h3>
+                                <p>Means "to bring about" or "to cause" (less common)</p>
+                                <p><em>Example: The new policy will effect change.</em></p>
+                            </div>
+                            <div class="guide-item">
+                                <h3>Affect (Noun)</h3>
+                                <p>Psychology term for emotional expression (rare)</p>
+                                <p><em>Example: The patient showed a flat affect.</em></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="guide-item">
-                    <h3>Effect (Noun)</h3>
-                    <p>Usually means "result" or "consequence"</p>
-                    <p><em>Example: The effect of the rain was a canceled picnic.</em></p>
+
+                <!-- To/Too/Two Accordion -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>To vs Too vs Two</span>
+                        <span class="accordion-arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="guide-grid">
+                            <div class="guide-item">
+                                <h3>To (Preposition)</h3>
+                                <p>Indicates direction, place, or position</p>
+                                <p><em>Example: I went to the store.</em></p>
+                            </div>
+                            <div class="guide-item">
+                                <h3>Too (Adverb)</h3>
+                                <p>Means "also" or "excessively"</p>
+                                <p><em>Example: I want to come too. / It's too hot outside.</em></p>
+                            </div>
+                            <div class="guide-item">
+                                <h3>Two (Number)</h3>
+                                <p>The number 2</p>
+                                <p><em>Example: I have two dogs.</em></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="guide-item">
-                    <h3>Effect (Verb)</h3>
-                    <p>Means "to bring about" or "to cause" (less common)</p>
-                    <p><em>Example: The new policy will effect change.</em></p>
+
+                <!-- Its/It's Accordion -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Its vs It's</span>
+                        <span class="accordion-arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="guide-grid">
+                            <div class="guide-item">
+                                <h3>Its (Possessive)</h3>
+                                <p>Shows ownership or possession</p>
+                                <p><em>Example: The dog wagged its tail.</em></p>
+                            </div>
+                            <div class="guide-item">
+                                <h3>It's (Contraction)</h3>
+                                <p>Short for "it is" or "it has"</p>
+                                <p><em>Example: It's raining outside. / It's been a long day.</em></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="guide-item">
-                    <h3>Affect (Noun)</h3>
-                    <p>Psychology term for emotional expression (rare)</p>
-                    <p><em>Example: The patient showed a flat affect.</em></p>
+
+                <!-- They're/Their/There Accordion -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>They're vs Their vs There</span>
+                        <span class="accordion-arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="guide-grid">
+                            <div class="guide-item">
+                                <h3>They're (Contraction)</h3>
+                                <p>Short for "they are"</p>
+                                <p><em>Example: They're going to the movies.</em></p>
+                            </div>
+                            <div class="guide-item">
+                                <h3>Their (Possessive)</h3>
+                                <p>Shows ownership or possession</p>
+                                <p><em>Example: Their house is beautiful.</em></p>
+                            </div>
+                            <div class="guide-item">
+                                <h3>There (Adverb/Pronoun)</h3>
+                                <p>Refers to a place or introduces a sentence</p>
+                                <p><em>Example: Put it there. / There are two options.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Your/You're Accordion -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Your vs You're</span>
+                        <span class="accordion-arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="guide-grid">
+                            <div class="guide-item">
+                                <h3>Your (Possessive)</h3>
+                                <p>Shows ownership or possession</p>
+                                <p><em>Example: Is this your book?</em></p>
+                            </div>
+                            <div class="guide-item">
+                                <h3>You're (Contraction)</h3>
+                                <p>Short for "you are"</p>
+                                <p><em>Example: You're doing great!</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Who's/Whose Accordion -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Who's vs Whose</span>
+                        <span class="accordion-arrow">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="guide-grid">
+                            <div class="guide-item">
+                                <h3>Who's (Contraction)</h3>
+                                <p>Short for "who is" or "who has"</p>
+                                <p><em>Example: Who's coming to dinner?</em></p>
+                            </div>
+                            <div class="guide-item">
+                                <h3>Whose (Possessive)</h3>
+                                <p>Shows ownership or possession</p>
+                                <p><em>Example: Whose jacket is this?</em></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -383,39 +714,28 @@
                 <p>Your checked sentences will appear here.</p>
             </div>
         </div>
-<!-- FAQ Section -->
-<div class="guide-box" style="margin-top: 2rem;">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-        <h3>What's the main difference between affect and effect?</h3>
-        <p>In most cases, "affect" is a verb meaning to influence or make a change to something, while "effect" is a noun meaning the result or consequence of a change.</p>
-    </div>
-    <div class="faq-item">
-        <h3>Are there exceptions to the rule?</h3>
-        <p>Yes! "Effect" can be a verb meaning "to bring about" (e.g., "to effect change"), and "affect" can be a noun in psychology referring to emotion or mood.</p>
-    </div>
-    <div class="faq-item">
-        <h3>What's the best way to remember the difference?</h3>
-        <p>Use the RAVEN mnemonic: Remember Affect Verb Effect Noun. In most cases, affect is the action (verb) and effect is the end result (noun).</p>
-    </div>
-    <div class="faq-item">
-        <h3>How accurate is this checker?</h3>
-        <p>Our checker uses pattern recognition and contextual analysis to provide accurate results for most common uses. However, complex sentences may require human judgment.</p>
-    </div>
-</div>
 
-<!-- Practice Exercises -->
-<div class="guide-box" style="margin-top: 2rem;">
-    <h2>Practice Exercises</h2>
-    <p>Test your knowledge with these sentences. Try to figure out if they use affect/effect correctly before checking:</p>
-    <ul style="list-style-type: none; padding-left: 0;">
-        <li style="margin-bottom: 0.5rem;">1. The weather will affect our travel plans.</li>
-        <li style="margin-bottom: 0.5rem;">2. What effect did the medicine have?</li>
-        <li style="margin-bottom: 0.5rem;">3. The new policy will effect positive change.</li>
-        <li style="margin-bottom: 0.5rem;">4. His mood affects everyone in the room.</li>
-        <li style="margin-bottom: 0.5rem;">5. The special effects in the movie were amazing.</li>
-    </ul>
-</div>
+        <!-- FAQ Section -->
+        <div class="guide-box" style="margin-top: 2rem;">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What are the most commonly confused words?</h3>
+                <p>The most commonly confused words include affect/effect, to/too/two, its/it's, they're/their/there, your/you're, and who's/whose. These words sound similar but have different meanings and uses.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can I remember the difference between these words?</h3>
+                <p>Use mnemonic devices, understand the grammatical function of each word, and practice regularly. For contractions, try expanding them to see if the sentence still makes sense.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How accurate is this checker?</h3>
+                <p>Our checker uses pattern recognition and contextual analysis to provide accurate results for most common uses. However, complex sentences may require human judgment.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I check multiple words in one sentence?</h3>
+                <p>Currently, each checker focuses on one word pair at a time. Check your sentence with the appropriate tool for the word pair you're unsure about.</p>
+            </div>
+        </div>
+
         <!-- Bottom Ad -->
         <div class="ad-container">
             <div class="ad-label">Advertisement</div>
@@ -433,193 +753,548 @@
     </div>
 
     <script>
-        // Word forms for matching
-        const affectForms = ['affect', 'affects', 'affected', 'affecting'];
-        const effectForms = ['effect', 'effects', 'effected', 'effecting'];
-        
-        // Common patterns for correct usage
-        const patterns = {
-            affectVerb: {
-                patterns: [
-                    /will affect/i,
-                    /would affect/i,
-                    /could affect/i,
-                    /might affect/i,
-                    /can affect/i,
-                    /may affect/i,
-                    /should affect/i,
-                    /to affect/i,
-                    /affecting/i,
-                    /affected by/i,
-                    /affects? (?:the|a|an|your|my|our|their|his|her|its)/i,
-                    /adversely affect/i,
-                    /positively affect/i,
-                    /negatively affect/i,
-                    /directly affect/i,
-                    /indirectly affect/i
-                ],
-                type: 'verb'
+        // Word patterns for each type
+        const wordPatterns = {
+            'affect-effect': {
+                affectForms: ['affect', 'affects', 'affected', 'affecting'],
+                effectForms: ['effect', 'effects', 'effected', 'effecting'],
+                patterns: {
+                    affectVerb: {
+                        patterns: [
+                            /will affect/i,
+                            /would affect/i,
+                            /could affect/i,
+                            /might affect/i,
+                            /can affect/i,
+                            /may affect/i,
+                            /should affect/i,
+                            /to affect/i,
+                            /affecting/i,
+                            /affected by/i,
+                            /affects? (?:the|a|an|your|my|our|their|his|her|its)/i,
+                            /adversely affect/i,
+                            /positively affect/i,
+                            /negatively affect/i,
+                            /directly affect/i,
+                            /indirectly affect/i
+                        ],
+                        type: 'verb'
+                    },
+                    effectNoun: {
+                        patterns: [
+                            /the effect/i,
+                            /an effect/i,
+                            /effects of/i,
+                            /cause and effect/i,
+                            /side effect/i,
+                            /have an? effect/i,
+                            /has an? effect/i,
+                            /had an? effect/i,
+                            /positive effect/i,
+                            /negative effect/i,
+                            /desired effect/i,
+                            /(?:take|taking|took|taken) effect/i,
+                            /in effect/i,
+                            /greenhouse effect/i,
+                            /special effects/i,
+                            /sound effects/i,
+                            /visual effects/i
+                        ],
+                        type: 'noun'
+                    },
+                    effectVerb: {
+                        patterns: [
+                            /effect(?:s|ed|ing)? (?:a |an )?change/i,
+                            /effect(?:s|ed|ing)? (?:a |an )?transformation/i,
+                            /effect(?:s|ed|ing)? (?:a |an )?solution/i,
+                            /effect(?:s|ed|ing)? (?:a |an )?repair/i,
+                            /effect(?:s|ed|ing)? (?:a |an )?cure/i,
+                            /effect(?:s|ed|ing)? (?:a |an )?rescue/i
+                        ],
+                        type: 'verb'
+                    },
+                    affectNoun: {
+                        patterns: [
+                            /flat affect/i,
+                            /emotional affect/i,
+                            /display of affect/i,
+                            /patient's affect/i,
+                            /inappropriate affect/i
+                        ],
+                        type: 'noun'
+                    }
+                }
             },
-            effectNoun: {
-                patterns: [
-                    /the effect/i,
-                    /an effect/i,
-                    /effects of/i,
-                    /cause and effect/i,
-                    /side effect/i,
-                    /have an? effect/i,
-                    /has an? effect/i,
-                    /had an? effect/i,
-                    /positive effect/i,
-                    /negative effect/i,
-                    /desired effect/i,
-                    /(?:take|taking|took|taken) effect/i,
-                    /in effect/i,
-                    /greenhouse effect/i,
-                    /special effects/i,
-                    /sound effects/i,
-                    /visual effects/i
-                ],
-                type: 'noun'
+            'to-too': {
+                toForms: ['to'],
+                tooForms: ['too'],
+                twoForms: ['two'],
+                patterns: {
+                    toPreposition: {
+                        patterns: [
+                            /to (?:the|a|an|my|your|his|her|its|our|their)/i,
+                            /go(?:ing)? to/i,
+                            /went to/i,
+                            /come to/i,
+                            /walk(?:ing|ed)? to/i,
+                            /drive to/i,
+                            /from .* to/i,
+                            /want to/i,
+                            /need to/i,
+                            /have to/i,
+                            /used to/i,
+                            /able to/i,
+                            /going to/i,
+                            /try to/i,
+                            /hope to/i,
+                            /plan to/i
+                        ],
+                        type: 'preposition'
+                    },
+                    tooAdverb: {
+                        patterns: [
+                            /too (?:much|many|few|little|big|small|hot|cold|loud|quiet|fast|slow|long|short|hard|easy|difficult)/i,
+                            /(?:way|far|not) too/i,
+                            /me too/i,
+                            /you too/i,
+                            /(?:I|you|he|she|it|we|they) (?:am|are|is|was|were) too/i,
+                            /too$/i,
+                            /, too\.?$/i,
+                            /love you too/i,
+                            /nice to meet you too/i
+                        ],
+                        type: 'adverb'
+                    },
+                    twoNumber: {
+                        patterns: [
+                            /two (?:people|persons|things|items|days|weeks|months|years|hours|minutes|seconds)/i,
+                            /(?:one|three|four|five|six|seven|eight|nine|ten) (?:or|and) two/i,
+                            /two of/i,
+                            /the two/i,
+                            /(?:first|last|next|previous) two/i,
+                            /two-/i,
+                            /two hundred/i,
+                            /two thousand/i,
+                            /two million/i,
+                            /two o'clock/i
+                        ],
+                        type: 'number'
+                    }
+                }
             },
-            effectVerb: {
-                patterns: [
-                    /effect(?:s|ed|ing)? (?:a |an )?change/i,
-                    /effect(?:s|ed|ing)? (?:a |an )?transformation/i,
-                    /effect(?:s|ed|ing)? (?:a |an )?solution/i,
-                    /effect(?:s|ed|ing)? (?:a |an )?repair/i,
-                    /effect(?:s|ed|ing)? (?:a |an )?cure/i,
-                    /effect(?:s|ed|ing)? (?:a |an )?rescue/i
-                ],
-                type: 'verb'
+            'its-its': {
+                itsForms: ['its'],
+                itsForms2: ["it's", "it's"],
+                patterns: {
+                    itsPossessive: {
+                        patterns: [
+                            /its (?:own|best|worst|first|last|only)/i,
+                            /its (?:color|size|shape|form|purpose|meaning|value|price)/i,
+                            /its (?:head|tail|body|eyes|ears|mouth|nose|face)/i,
+                            /its (?:top|bottom|side|front|back|middle|center|edge)/i,
+                            /(?:lost|found|changed|kept) its/i,
+                            /on its/i,
+                            /in its/i,
+                            /at its/i,
+                            /for its/i,
+                            /with its/i,
+                            /by its/i
+                        ],
+                        type: 'possessive'
+                    },
+                    itsContraction: {
+                        patterns: [
+                            /it['']s (?:a|an|the)/i,
+                            /it['']s (?:not|n't)/i,
+                            /it['']s (?:been|being)/i,
+                            /it['']s (?:going|coming|getting|becoming)/i,
+                            /it['']s (?:hot|cold|warm|cool|sunny|rainy|cloudy|windy)/i,
+                            /it['']s (?:good|bad|great|terrible|wonderful|awful)/i,
+                            /it['']s (?:time|late|early)/i,
+                            /it['']s (?:over|done|finished|complete)/i,
+                            /I (?:think|believe|know|hope|wish) it['']s/i,
+                            /^it['']s/i
+                        ],
+                        type: 'contraction'
+                    }
+                }
             },
-            affectNoun: {
-                patterns: [
-                    /flat affect/i,
-                    /emotional affect/i,
-                    /display of affect/i,
-                    /patient's affect/i,
-                    /inappropriate affect/i
-                ],
-                type: 'noun'
+            'theyre-their-there': {
+                theyreForms: ["they're", "they're", "theyre"],
+                theirForms: ['their', 'theirs'],
+                thereForms: ['there'],
+                patterns: {
+                    theyreContraction: {
+                        patterns: [
+                            /they['']re (?:going|coming|leaving|staying)/i,
+                            /they['']re (?:happy|sad|angry|excited|tired)/i,
+                            /they['']re (?:not|n't)/i,
+                            /they['']re (?:here|there)/i,
+                            /they['']re (?:ready|done|finished)/i,
+                            /they['']re (?:the|a|an)/i,
+                            /I (?:think|believe|know|hope) they['']re/i,
+                            /^they['']re/i,
+                            /they['']re (?:in|on|at|by|with|for)/i
+                        ],
+                        type: 'contraction'
+                    },
+                    theirPossessive: {
+                        patterns: [
+                            /their (?:house|home|car|dog|cat|children|parents|friends)/i,
+                            /their (?:work|job|business|company|office)/i,
+                            /their (?:own|best|worst|first|last|only)/i,
+                            /(?:lost|found|changed|kept) their/i,
+                            /in their/i,
+                            /on their/i,
+                            /at their/i,
+                            /for their/i,
+                            /with their/i,
+                            /by their/i,
+                            /theirs$/i,
+                            /theirs\?$/i
+                        ],
+                        type: 'possessive'
+                    },
+                    thereLocation: {
+                        patterns: [
+                            /over there/i,
+                            /right there/i,
+                            /up there/i,
+                            /down there/i,
+                            /out there/i,
+                            /in there/i,
+                            /there (?:is|are|was|were)/i,
+                            /there (?:will|would|could|should|might|may) be/i,
+                            /go there/i,
+                            /went there/i,
+                            /going there/i,
+                            /been there/i,
+                            /stay there/i,
+                            /live there/i,
+                            /look there/i,
+                            /^there,/i
+                        ],
+                        type: 'location'
+                    }
+                }
+            },
+            'your-youre': {
+                yourForms: ['your', 'yours'],
+                youreForms: ["you're", "you're", "youre"],
+                patterns: {
+                    yourPossessive: {
+                        patterns: [
+                            /your (?:name|age|address|phone|email)/i,
+                            /your (?:house|home|car|dog|cat|family|friends)/i,
+                            /your (?:work|job|business|company|office)/i,
+                            /your (?:own|best|worst|first|last|only)/i,
+                            /(?:lost|found|changed|kept) your/i,
+                            /in your/i,
+                            /on your/i,
+                            /at your/i,
+                            /for your/i,
+                            /with your/i,
+                            /by your/i,
+                            /yours$/i,
+                            /yours\?$/i,
+                            /yours,/i
+                        ],
+                        type: 'possessive'
+                    },
+                    youreContraction: {
+                        patterns: [
+                            /you['']re (?:welcome|right|wrong|correct)/i,
+                            /you['']re (?:going|coming|leaving|staying)/i,
+                            /you['']re (?:happy|sad|angry|excited|tired)/i,
+                            /you['']re (?:not|n't)/i,
+                            /you['']re (?:here|there)/i,
+                            /you['']re (?:ready|done|finished)/i,
+                            /you['']re (?:the|a|an)/i,
+                            /I (?:think|believe|know|hope) you['']re/i,
+                            /^you['']re/i,
+                            /you['']re (?:in|on|at|by|with|for)/i
+                        ],
+                        type: 'contraction'
+                    }
+                }
+            },
+            'whos-whose': {
+                whosForms: ["who's", "who's", "whos"],
+                whoseForms: ['whose'],
+                patterns: {
+                    whosContraction: {
+                        patterns: [
+                            /who['']s (?:there|here)/i,
+                            /who['']s (?:going|coming|leaving|staying)/i,
+                            /who['']s (?:this|that)/i,
+                            /who['']s (?:calling|asking|talking)/i,
+                            /who['']s (?:responsible|available|interested)/i,
+                            /who['']s (?:the|a|an)/i,
+                            /who['']s (?:in|on|at|by|with|for)/i,
+                            /^who['']s/i,
+                            /guess who['']s/i
+                        ],
+                        type: 'contraction'
+                    },
+                    whosePossessive: {
+                        patterns: [
+                            /whose (?:house|car|phone|book|idea)/i,
+                            /whose (?:turn|fault|responsibility)/i,
+                            /whose (?:is|are)/i,
+                            /^whose/i,
+                            /(?:wonder|know|see|find out) whose/i,
+                            /the (?:person|people|one|ones) whose/i
+                        ],
+                        type: 'possessive'
+                    }
+                }
             }
         };
 
-        function checkSentence(sentence) {
-            // Find which word is used in the sentence
-            let hasAffect = false;
-            let hasEffect = false;
-            let matchedWord = '';
-            
-            for (const form of affectForms) {
-                const regex = new RegExp(`\\b${form}\\b`, 'i');
-                if (regex.test(sentence)) {
-                    hasAffect = true;
-                    matchedWord = sentence.match(regex)[0];
-                    break;
-                }
-            }
-            
-            for (const form of effectForms) {
-                const regex = new RegExp(`\\b${form}\\b`, 'i');
-                if (regex.test(sentence)) {
-                    hasEffect = true;
-                    matchedWord = sentence.match(regex)[0];
-                    break;
-                }
-            }
-            
-            if (!hasAffect && !hasEffect) {
-                return {
-                    isCorrect: false,
-                    message: 'Please enter a sentence containing "affect" or "effect".'
-                };
-            }
-            
-            // Check if the usage matches known patterns
-            let matchedPattern = null;
-            let expectedType = null;
-            
-            for (const [key, value] of Object.entries(patterns)) {
-                for (const pattern of value.patterns) {
-                    if (pattern.test(sentence)) {
-                        matchedPattern = key;
-                        expectedType = value.type;
+        function checkSentence(sentence, type) {
+            const patterns = wordPatterns[type];
+            if (!patterns) return { isCorrect: false, message: 'Invalid checker type' };
+
+            let foundWord = '';
+            let foundType = '';
+
+            // Check which word is used in the sentence
+            for (const [key, forms] of Object.entries(patterns)) {
+                if (key === 'patterns') continue;
+                
+                for (const form of forms) {
+                    const regex = new RegExp(`\\b${form}\\b`, 'i');
+                    if (regex.test(sentence)) {
+                        foundWord = sentence.match(regex)[0];
+                        foundType = key.replace('Forms', '').replace('Forms2', '');
                         break;
                     }
                 }
-                if (matchedPattern) break;
+                if (foundWord) break;
             }
+
+            if (!foundWord) {
+                const wordList = Object.keys(patterns)
+                    .filter(key => key !== 'patterns')
+                    .map(key => key.replace('Forms', '').replace('Forms2', ''))
+                    .map(word => `"${word}"`)
+                    .join(', ');
+                
+                return {
+                    isCorrect: false,
+                    message: `Please enter a sentence containing ${wordList}.`
+                };
+            }
+
+            // Simple pattern-based checking
+            let isCorrect = false;
+            let correctWord = foundWord;
             
-            // If we found a matching pattern, check if it's correct
-            if (matchedPattern) {
-                if ((hasAffect && matchedPattern.startsWith('affect')) || 
-                    (hasEffect && matchedPattern.startsWith('effect'))) {
-                    return {
-                        isCorrect: true,
-                        message: 'Correct!'
-                    };
-                } else {
-                    // Wrong word for the pattern
-                    let correction = sentence;
-                    if (hasAffect) {
-                        // Should use effect instead
-                        correction = sentence.replace(
-                            new RegExp(`\\b${matchedWord}\\b`, 'i'),
-                            matchedWord.replace(/affect/i, 'effect')
-                        );
-                    } else {
-                        // Should use affect instead
-                        correction = sentence.replace(
-                            new RegExp(`\\b${matchedWord}\\b`, 'i'),
-                            matchedWord.replace(/effect/i, 'affect')
-                        );
+            switch(type) {
+                case 'affect-effect':
+                    if (foundType.includes('affect')) {
+                        // Check if affect is used in a question where effect should be used
+                        if (/\bwhat\s+(?:is|are|was|were)\s+the\s+affects?\b/i.test(sentence) ||
+                            /\bwhich\s+affects?\s+(?:is|are|was|were)\b/i.test(sentence) ||
+                            /\bthe\s+affects?\s+(?:that|which)\b/i.test(sentence)) {
+                            correctWord = foundWord.replace(/affect/i, 'effect');
+                        } else if (/\b(?:will|would|could|might|can|may|should|must|shall|to|does|did|do)\s+affects?\b/i.test(sentence) ||
+                            /\baffects?\s+(?:me|you|him|her|it|us|them|everyone|someone|anyone|nobody|people)\b/i.test(sentence) ||
+                            /\baffects?\s+(?:the|a|an|this|that|these|those|my|your|his|her|its|our|their)\s+\w+\b/i.test(sentence) ||
+                            /\b(?:how|what|where|when|why|which)\s+(?:it|this|that)\s+affects?\b/i.test(sentence) ||
+                            /\b(?:I|you|we|they|he|she|it)\s+affects?\b/i.test(sentence) ||
+                            /\baffecting\b/i.test(sentence) ||
+                            /\baffected\b/i.test(sentence) ||
+                            /\b(?:adversely|negatively|positively|directly|indirectly|greatly|significantly|deeply|strongly)\s+affects?\b/i.test(sentence)) {
+                            isCorrect = true;
+                        } else if (/\b(?:flat|emotional|inappropriate|blunted)\s+affect\b/i.test(sentence)) {
+                            // Rare psychology usage as noun
+                            isCorrect = true;
+                        } else {
+                            correctWord = foundWord.replace(/affect/i, 'effect');
+                        }
+                    } else if (foundType.includes('effect')) {
+                        // Check if effect is used in a verb position where affect should be used
+                        if (/\b(?:will|would|could|might|can|may|should|must|shall)\s+effects?\s+(?:me|you|him|her|it|us|them|everyone|someone|anyone|nobody|people)\b/i.test(sentence) ||
+                            /\b(?:does|did|do)\s+(?:not\s+)?effects?\b/i.test(sentence) ||
+                            /\b(?:it|this|that)\s+effects?\s+(?:me|you|him|her|it|us|them)\b/i.test(sentence) ||
+                            /\bto\s+effects?\s+(?:the|a|an|this|that|these|those|my|your|his|her|its|our|their)\b/i.test(sentence) && 
+                            !/\bto\s+effects?\s+(?:change|changes|a\s+change|transformation|a\s+transformation)\b/i.test(sentence)) {
+                            correctWord = foundWord.replace(/effect/i, 'affect');
+                        } else if (/\b(?:the|an?|this|that|these|those|any|no|some|much|little)\s+effects?\b/i.test(sentence) ||
+                            /\b(?:his|her|its|their|our|your|my)\s+effects?\b/i.test(sentence) ||
+                            /\beffects?\s+(?:of|on|from)\b/i.test(sentence) ||
+                            /\b(?:side|special|sound|visual|greenhouse|long-term|short-term|positive|negative|adverse|desired|lasting|damaging|harmful|beneficial)\s+effects?\b/i.test(sentence) ||
+                            /\b(?:cause\s+and|cause\s+&)\s+effect\b/i.test(sentence) ||
+                            /\b(?:have|has|had|having)\s+(?:an?|the|no|little|much|some|any)\s+effect\b/i.test(sentence) ||
+                            /\b(?:take|takes|took|taking|taken)\s+effect\b/i.test(sentence) ||
+                            /\b(?:in|into|with|without)\s+effect\b/i.test(sentence) ||
+                            /\bripple\s+effect\b/i.test(sentence) ||
+                            /\bbutterfly\s+effect\b/i.test(sentence) ||
+                            /\bdomino\s+effect\b/i.test(sentence) ||
+                            /\bknock-on\s+effect\b/i.test(sentence) ||
+                            /\bmass\s+effect\b/i.test(sentence) ||
+                            /\b(?:what|which)\s+(?:is|are|was|were)\s+the\s+effects?\b/i.test(sentence)) {
+                            isCorrect = true;
+                        } else if (/\beffects?\s+(?:change|changes|transformation|transformations)\b/i.test(sentence) ||
+                                 /\bto\s+effect\s+(?:change|changes|a\s+change|transformation|a\s+transformation)\b/i.test(sentence)) {
+                            // Rare verb usage meaning "to bring about"
+                            isCorrect = true;
+                        } else {
+                            // In most other cases, if "effect" is used in a verb position, it should be "affect"
+                            correctWord = foundWord.replace(/effect/i, 'affect');
+                        }
                     }
-                    return {
-                        isCorrect: false,
-                        message: 'Incorrect',
-                        correction: correction
-                    };
-                }
+                    break;
+                    
+                case 'to-too':
+                    if (foundType.includes('to')) {
+                        // Check contexts where "too" or "two" should be used instead
+                        if (/\bto\s+(?:much|many|few|little|hot|cold|fast|slow|hard|easy|big|small|loud|quiet|expensive|cheap|far|long|short|high|low|bright|dark|sweet|sour)\b/i.test(sentence)) {
+                            correctWord = 'too';
+                        } else if (/\b(?:me|you|him|her|us|them)\s+to$/i.test(sentence) || 
+                                  /\b(?:me|you|him|her|us|them)\s+to\s*[\.!?,]/i.test(sentence)) {
+                            correctWord = 'too';
+                        } else if (/\bto\s+(?:hours|minutes|days|weeks|months|years|times|people|dogs|cats|cars|books|apples|oranges)\b/i.test(sentence)) {
+                            correctWord = 'two';
+                        } else {
+                            isCorrect = true;
+                        }
+                    } else if (foundType.includes('too')) {
+                        // Check contexts where "to" or "two" should be used instead
+                        if (/\btoo\s+(?:go|come|see|do|make|have|get|take|give|run|walk|eat|sleep|work|play|write|read|learn|study|teach|buy|sell)\b/i.test(sentence) ||
+                            /\b(?:want|need|like|love|hate|prefer|decide|plan|hope|wish|try)\s+too\b/i.test(sentence) ||
+                            /\b(?:going|about|ready)\s+too\b/i.test(sentence)) {
+                            correctWord = 'to';
+                        } else if (/\btoo\s+(?:hours|minutes|days|weeks|months|years|times|people|dogs|cats|cars|books|apples|oranges)\b/i.test(sentence)) {
+                            correctWord = 'two';
+                        } else {
+                            isCorrect = true;
+                        }
+                    } else if (foundType.includes('two')) {
+                        // Check contexts where "to" or "too" should be used instead
+                        if (/\btwo\s+(?:go|come|see|do|make|have|get|take|give|run|walk|eat|sleep|work|play|write|read|learn|study|teach|buy|sell)\b/i.test(sentence) ||
+                            /\b(?:want|need|like|love|hate|prefer|decide|plan|hope|wish|try)\s+two\b/i.test(sentence) ||
+                            /\b(?:going|about|ready)\s+two\b/i.test(sentence)) {
+                            correctWord = 'to';
+                        } else if (/\btwo\s+(?:much|many|few|little|hot|cold|fast|slow|hard|easy|big|small|loud|quiet|expensive|cheap|far|long|short|high|low|bright|dark|sweet|sour)\b/i.test(sentence)) {
+                            correctWord = 'too';
+                        } else {
+                            isCorrect = true;
+                        }
+                    }
+                    break;
+                    
+                case 'its-its':
+                    if (foundType.includes('its') && !foundWord.includes("'")) {
+                        // Check contexts where "it's" should be used
+                        if (/\bits\s+(?:a|an|the|not|been|going|coming|getting|becoming|time|important|necessary|good|bad|nice|cold|hot|raining|snowing|sunny|dark|late|early|over|done|finished|ready|true|false|right|wrong|okay|fine|great|wonderful|terrible|awful|amazing|beautiful|ugly|fun|boring|interesting|exciting|difficult|easy|hard|simple|complicated)\b/i.test(sentence) ||
+                            /\bits\s+(?:so|too|very|really|quite|rather|extremely|incredibly)\b/i.test(sentence)) {
+                            correctWord = "it's";
+                        } else {
+                            isCorrect = true;
+                        }
+                    } else if (foundWord.includes("'")) {
+                        // Check contexts where "its" should be used
+                        if (/\bit['']s\s+(?:tail|paw|paws|fur|teeth|eyes|ears|nose|mouth|head|body|legs|wings|feathers|scales|shell|color|colour|size|shape|weight|height|length|width|name|value|price|cost|worth|purpose|function|role|meaning|definition|location|position|place|owner|creator|maker|manufacturer)\b/i.test(sentence)) {
+                            correctWord = "its";
+                        } else {
+                            isCorrect = true;
+                        }
+                    }
+                    break;
+                    
+                case 'theyre-their-there':
+                    if (foundType.includes('theyre')) {
+                        // Check contexts where "their" or "there" should be used
+                        if (/\bthey['']re\s+(?:house|home|car|cars|dog|dogs|cat|cats|book|books|phone|phones|computer|computers|parent|parents|child|children|friend|friends|teacher|teachers|student|students|shoe|shoes|clothes|shirt|shirts|jacket|jackets|hat|hats|bag|bags|key|keys|room|rooms|desk|desks|chair|chairs|table|tables)\b/i.test(sentence)) {
+                            correctWord = "their";
+                        } else {
+                            isCorrect = true;
+                        }
+                    }                     else if (foundType.includes('their')) {
+                        // Check contexts where "they're" or "there" should be used
+                        if (/\btheir\s+(?:going|coming|leaving|staying|walking|running|eating|drinking|sleeping|working|playing|studying|reading|writing|talking|sitting|standing|looking|thinking|planning|trying|hoping|waiting)\b/i.test(sentence) ||
+                            /\btheir\s+(?:happy|sad|angry|excited|tired|bored|confused|worried|scared|afraid|sick|hungry|thirsty|cold|hot|busy|ready|late|early|right|wrong|good|bad|nice|mean|smart|stupid|funny|serious)\b/i.test(sentence) ||
+                            /\btheir\s+(?:here|there|everywhere|nowhere|somewhere|home|outside|inside|upstairs|downstairs)\b/i.test(sentence) ||
+                            /\btheir\s+(?:not|very|so|too|really|quite|rather|extremely)\b/i.test(sentence)) {
+                            correctWord = "they're";
+                        } else if (/\btheir\s+(?:is|are|was|were)\b/i.test(sentence)) {
+                            correctWord = "there";
+                        } else if (/\b(?:over|under|near|by|at|around)\s+their$/i.test(sentence) || 
+                                  /\b(?:over|under|near|by|at|around)\s+their\s*[\.!?,]/i.test(sentence)) {
+                            correctWord = "there";
+                        } else {
+                            isCorrect = true;
+                        }
+                    } else if (foundType.includes('there')) {
+                        // Check contexts where "they're" or "their" should be used
+                        if (/\bthere\s+(?:going|coming|leaving|staying|walking|running|eating|drinking|sleeping|working|playing|studying|reading|writing|talking|sitting|standing|looking|thinking|planning|trying|hoping|waiting)\b/i.test(sentence) ||
+                            /\bthere\s+(?:happy|sad|angry|excited|tired|bored|confused|worried|scared|afraid|sick|hungry|thirsty|cold|hot|busy|ready|late|early|right|wrong|good|bad|nice|mean|smart|stupid|funny|serious)\b/i.test(sentence) ||
+                            /\bthere\s+(?:not|very|so|too|really|quite|rather|extremely)\b/i.test(sentence) && 
+                            !/\bthere\s+(?:is|are|was|were)\b/i.test(sentence)) {
+                            correctWord = "they're";
+                        } else if (/\bthere\s+(?:house|home|car|cars|dog|dogs|cat|cats|book|books|phone|phones|computer|computers|parent|parents|child|children|friend|friends|teacher|teachers|student|students|shoe|shoes|clothes|shirt|shirts|jacket|jackets|hat|hats|bag|bags|key|keys|room|rooms|desk|desks|chair|chairs|table|tables)\b/i.test(sentence) &&
+                                  !/\bthere\s+(?:is|are|was|were)\b/i.test(sentence)) {
+                            correctWord = "their";
+                        } else {
+                            isCorrect = true;
+                        }
+                    }
+                    break;
+                    
+                case 'your-youre':
+                    if (foundType.includes('your') && !foundWord.includes("'")) {
+                        // Check contexts where "you're" should be used
+                        if (/\byour\s+(?:going|coming|leaving|staying|walking|running|eating|drinking|sleeping|working|playing|studying|reading|writing|talking|sitting|standing|looking|thinking|planning|trying|hoping|waiting)\b/i.test(sentence) ||
+                            /\byour\s+(?:happy|sad|angry|excited|tired|bored|confused|worried|scared|afraid|sick|hungry|thirsty|cold|hot|busy|ready|late|early|right|wrong|good|bad|nice|mean|smart|stupid|funny|serious|welcome|amazing|awesome|beautiful|ugly|cute|pretty|handsome|gorgeous)\b/i.test(sentence) ||
+                            /\byour\s+(?:here|there|everywhere|nowhere|somewhere|home|outside|inside|upstairs|downstairs)\b/i.test(sentence) ||
+                            /\byour\s+(?:not|very|so|too|really|quite|rather|extremely|being)\b/i.test(sentence) ||
+                            /\byour\s+(?:a|an|the)\b/i.test(sentence)) {
+                            correctWord = "you're";
+                        } else {
+                            isCorrect = true;
+                        }
+                    } else if (foundWord.includes("'")) {
+                        // Check contexts where "your" should be used
+                        if (/\byou['']re\s+(?:house|home|car|cars|dog|dogs|cat|cats|book|books|phone|phones|computer|computers|parent|parents|child|children|friend|friends|teacher|teachers|student|students|shoe|shoes|clothes|shirt|shirts|jacket|jackets|hat|hats|bag|bags|key|keys|room|rooms|desk|desks|chair|chairs|table|tables|name|age|birthday|favorite|favourite)\b/i.test(sentence)) {
+                            correctWord = "your";
+                        } else {
+                            isCorrect = true;
+                        }
+                    }
+                    break;
+                    
+                case 'whos-whose':
+                    if (foundWord.includes("'")) {
+                        // Check contexts where "whose" should be used
+                        if (/\bwho['']s\s+(?:house|home|car|cars|dog|dogs|cat|cats|book|books|phone|phones|computer|computers|parent|parents|child|children|friend|friends|teacher|teachers|student|students|shoe|shoes|clothes|shirt|shirts|jacket|jackets|hat|hats|bag|bags|key|keys|room|rooms|desk|desks|chair|chairs|table|tables|idea|fault|turn|responsibility|problem|choice|decision|job|work|birthday|party|wedding|name)\b/i.test(sentence)) {
+                            correctWord = "whose";
+                        } else {
+                            isCorrect = true;
+                        }
+                    } else {
+                        // Check contexts where "who's" should be used
+                        if (/\bwhose\s+(?:there|here|coming|going|calling|knocking|asking|talking|sitting|standing|working|playing|ready|late|early|first|next|responsible|available|interested|willing|able)\b/i.test(sentence) ||
+                            /\bwhose\s+(?:at|in|on|with|for|by)\b/i.test(sentence) ||
+                            /\bwhose\s+(?:this|that|it|he|she|they)\b/i.test(sentence)) {
+                            correctWord = "who's";
+                        } else {
+                            isCorrect = true;
+                        }
+                    }
+                    break;
             }
             
-            // If no pattern matched, use general rules
-            // This is a simplified check - in reality, more context would be needed
-            const sentenceLower = sentence.toLowerCase();
-            
-            // Check for common verb indicators
-            if (hasAffect) {
-                if (/\b(will|would|could|might|can|may|should|to|is|are|was|were)\s+affect/i.test(sentence)) {
-                    return {
-                        isCorrect: true,
-                        message: 'Correct!'
-                    };
-                }
+            if (isCorrect) {
+                return {
+                    isCorrect: true,
+                    message: 'Correct!'
+                };
             }
             
-            // Check for common noun indicators
-            if (hasEffect) {
-                if (/\b(the|an?|this|that|these|those|his|her|its|their|our|your|my)\s+effects?\b/i.test(sentence)) {
-                    return {
-                        isCorrect: true,
-                        message: 'Correct!'
-                    };
-                }
-            }
-            
-            // Default to suggesting the opposite if unsure
-            let correction = sentence;
-            if (hasAffect) {
-                correction = sentence.replace(
-                    new RegExp(`\\b${matchedWord}\\b`, 'i'),
-                    matchedWord.replace(/affect/i, 'effect')
-                );
-            } else {
-                correction = sentence.replace(
-                    new RegExp(`\\b${matchedWord}\\b`, 'i'),
-                    matchedWord.replace(/effect/i, 'affect')
-                );
-            }
+            // Generate correction
+            let correction = sentence.replace(new RegExp(`\\b${foundWord}\\b`, 'i'), correctWord);
             
             return {
                 isCorrect: false,
@@ -631,11 +1306,12 @@
         // History management
         let history = [];
         
-        function addToHistory(sentence, result) {
+        function addToHistory(sentence, result, type) {
             history.unshift({
                 sentence: sentence,
                 isCorrect: result.isCorrect,
-                correction: result.correction
+                correction: result.correction,
+                type: type
             });
             
             // Keep only last 10 items
@@ -656,54 +1332,98 @@
             
             container.innerHTML = history.map(item => `
                 <div class="history-item">
+                    <span class="type">${item.type}</span>
                     <span class="status ${item.isCorrect ? 'status-correct' : 'status-incorrect'}">
                         ${item.isCorrect ? 'Correct' : 'Incorrect'}
                     </span>
                     <div class="original">${item.sentence}</div>
-                    ${item.correction ? `<div class="correction">Correction: ${item.correction}</div>` : ''}
+                    ${item.correction ? `<div class="correction">Correct sentence: ${item.correction}</div>` : ''}
                 </div>
             `).join('');
         }
 
-        // Event listeners
-        document.getElementById('check-button').addEventListener('click', function() {
-            const input = document.getElementById('sentence-input');
-            const resultBox = document.getElementById('result-box');
-            const sentence = input.value.trim();
-            
-            if (!sentence) {
-                resultBox.className = 'result-box result-incorrect';
-                resultBox.innerHTML = 'Please enter a sentence.';
-                resultBox.style.display = 'block';
-                return;
-            }
-            
-            const result = checkSentence(sentence);
-            
-            if (result.isCorrect) {
-                resultBox.className = 'result-box result-correct';
-                resultBox.innerHTML = result.message;
-            } else {
-                resultBox.className = 'result-box result-incorrect';
-                resultBox.innerHTML = result.message;
-                if (result.correction) {
-                    resultBox.innerHTML += `<div class="correction">Correct sentence: ${result.correction}</div>`;
+        // Event listeners for all check buttons
+        document.querySelectorAll('.check-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const type = this.dataset.type;
+                const input = document.getElementById(`${type}-input`);
+                const resultBox = this.nextElementSibling;
+                const sentence = input.value.trim();
+                
+                if (!sentence) {
+                    resultBox.className = 'result-box result-incorrect';
+                    resultBox.innerHTML = 'Please enter a sentence.';
+                    resultBox.style.display = 'block';
+                    return;
                 }
-            }
+                
+                const result = checkSentence(sentence, type);
+                
+                if (result.isCorrect) {
+                    resultBox.className = 'result-box result-correct';
+                    resultBox.innerHTML = result.message;
+                } else {
+                    resultBox.className = 'result-box result-incorrect';
+                    resultBox.innerHTML = result.message;
+                    if (result.correction) {
+                        resultBox.innerHTML += `<div class="correction">Correct sentence: ${result.correction}</div>`;
+                    }
+                }
+                
+                resultBox.style.display = 'block';
+                
+                // Add to history only if it's a real check
+                if (!result.message.includes('Please enter a sentence containing')) {
+                    addToHistory(sentence, result, type);
+                }
+            });
             
-            resultBox.style.display = 'block';
-            
-            // Add to history only if it's a real check
-            if (result.message !== 'Please enter a sentence containing "affect" or "effect".') {
-                addToHistory(sentence, result);
-            }
+            // Allow Enter key to submit
+            const type = button.dataset.type;
+            const input = document.getElementById(`${type}-input`);
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    button.click();
+                }
+            });
         });
-        
-        // Allow Enter key to submit
-        document.getElementById('sentence-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.getElementById('check-button').click();
-            }
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const arrow = this.querySelector('.accordion-arrow');
+                
+                // Close all other accordions
+                document.querySelectorAll('.accordion-content').forEach(otherContent => {
+                    if (otherContent !== content) {
+                        otherContent.classList.remove('active');
+                    }
+                });
+                
+                document.querySelectorAll('.accordion-arrow').forEach(otherArrow => {
+                    if (otherArrow !== arrow) {
+                        otherArrow.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current accordion
+                content.classList.toggle('active');
+                arrow.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
         });
     </script>
 </body>
