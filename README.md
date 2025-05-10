@@ -1,2 +1,2 @@
-# affect-effect
-affect vs effect website
+# which-word-is-it
+which word is it website
